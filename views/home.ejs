@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/STYLES/main.css">
+    <link rel="shortcut icon" href="assets/flipkartfavicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+    <%- include('basic_template.ejs') -%>
+        <hr>
+
+        <section class="topProductNavbar">
+
+
+            <div class='topProductNavbar_Nav'>
+                <a href="/appliances">
+                    <div class="item-content">
+                        <img src="https://rukminim1.flixcart.com/fk-p-flap/64/64/image/0139228b2f7eb413.jpg?q=100">
+                        <p>Appliances <i class="fas fa-caret-down"></i></p>
+                    </div>
+                </a>
+                <div class="dropdown">
+                    <div class="dropdown-content">
+                        <a href="/ac">AC</a>
+                        <a href="/fridge">Fridge</a>
+                        <a href="/tv">TV</a>
+                        <a href="/wm">Washing Machine</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class='topProductNavbar_Nav'>
+                <a href="/beauty">
+                    <div class="item-content">
+                        <img src="https://rukminim2.flixcart.com/flap/64/64/image/dff3f7adcf3a90c6.png?q=100">
+                        <p>Beauty & More</p>
+                    </div>
+                </a>
+            </div>
+
+
+            <div class='topProductNavbar_Nav'>
+                <a href="/Electronics">
+                    <div class="item-content">
+                        <img src="https://rukminim2.flixcart.com/flap/64/64/image/69c6589653afdb9a.png?q=100">
+                        <p>Electronics <i class="fas fa-caret-down"></i></p>
+                    </div>
+                </a>
+                <div class="dropdown">
+                    <div class="dropdown-content">
+                        <a href="/camera">camera</a>
+                        <a href="/headphone">headphones</a>
+                        <a href="/laptops">laptops</a>
+                        <a href="/printer">printer</a>
+                        <a href="/speaker">speaker</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class='topProductNavbar_Nav'>
+                <a href="/Fashion">
+                    <div class="item-content">
+                        <img src="https://rukminim2.flixcart.com/fk-p-flap/64/64/image/0d75b34f7d8fbcb3.png?q=100">
+                        <p>Fashion <i class="fas fa-caret-down"></i></p>
+                    </div>
+                </a>
+
+                <div class="dropdown">
+                    <div class="dropdown-content">
+                        <a href="/kids">Kids</a>
+                        <a href="/men_fashion">Men's</a>
+                        <a href="/women_fashion">Women's</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class='topProductNavbar_Nav'>
+                <a href="/Grocery">
+                    <div class="item-content">
+                        <img src="https://rukminim2.flixcart.com/flap/64/64/image/29327f40e9c4d26b.png?q=100">
+                        <p>Grocery <i class="fas fa-caret-down"></i></p>
+                    </div>
+                </a>
+                <div class="dropdown">
+                    <div class="dropdown-content">
+                        <a href="#">Fruits & Vegetables</a>
+                        <a href="#">Dairy</a>
+                        <a href="#">Grains</a>
+                        <a href="#">Beverages</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class='topProductNavbar_Nav'>
+                <a href="/furniture">
+                    <div class="item-content">
+                        <img src="https://rukminim2.flixcart.com/flap/64/64/image/ab7e2b022a4587dd.jpg?q=100">
+                        <p>Home & Furniture</p>
+                    </div>
+                </a>
+
+            </div>
+
+
+            <div class='topProductNavbar_Nav'>
+                <a href="/Mobile">
+                    <div class="item-content">
+                        <img src="https://rukminim2.flixcart.com/flap/64/64/image/22fddf3c7da4c4f4.png?q=100">
+                        <p>Mobile</p>
+                    </div>
+                </a>
+            </div>
+
+
+
+        </section>
+
+
+
+        </section>
+        <section class="scrollbar">
+            <div class="scroll_container">
+                <div class="top_panel">
+                    <div class="scroll">
+                        <img class="scroll_img" src="/images/site_requirred/scroll_container/scroll1.jpeg" alt
+                            src="bag">
+                    </div>
+
+                    <div class="scroll">
+                        <img class="scroll_img" src="/images/site_requirred/scroll_container/scroll2.jpeg" alt="bag">
+                    </div>
+
+                    <div class="scroll">
+                        <img class="scroll_img" src="/images/site_requirred/scroll_container/scroll3.jpeg" alt="bag">
+                    </div>
+
+
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <hr style="color: rgba(128, 128, 128, 0.3);">
+        <header class="head">
+            <div class="header-content">
+                <h1>Best Deals</h1>
+            </div>
+        </header>
+        <div class="container_fashion">
+            <div class="fashion">
+                <div class="container__">
+                    <!-- Product 1 -->
+                    <%result.forEach(function(item) {%>
+                        <% if(item.collection=='best_deals' ){%>
+                            <div class="product">
+                                <img src="/images/<%=item.image%>" alt="Product 1">
+                                <h3>
+                                    <%=item.name%>
+                                </h3>
+                                <% if(item.sale_price){ %>
+                                    <div class="price_text_">&#8377<span
+                                            style="color: #f9ca16;text-decoration:line-through;;text-decoration-color: aliceblue;"></span>
+                                        <%=item.sale_price%></span>
+                                            <div class="price_text_"><span
+                                                    style="color: #f91616;text-decoration:line-through;">&#8377
+                                                    <%=item.price%>
+                                                </span>
+                                            </div>
+                                    </div>
+
+                                    <%} else{%>
+
+                                        <div class="price_text_">$<span style="color: #f9ca16;"></span>
+                                            <%=item.price%></span>
+                                        </div>
+                                        <%}%>
+                            </div>
+
+                            <!-- Add more products here -->
+                            <%}})%>
+                </div>
+            </div>
+        </div>
+
+        <!-- BANNER STARTS -->
+
+
+        <div class="banner">
+            <div class="deal_of_the_day">
+                <div class="photo">
+                    <img src="images/site_requirred/deal_ofthe_week.png" alt="deal">
+                </div>
+            </div>
+            <div class="detail">
+                <div class="text_deal">
+                    DEAL OF THE WEEK
+                </div>
+                <hr>
+                <div class="timer">
+                    <ul class="timer_ele">
+                        <li><span id="days">00</span>DAY</li>
+                        <li><span id="hours">00</span>HOURS</li>
+                        <li><span class="colon">:</span></li>
+                        <li><span id="minutes">00</span>MINUTES</li>
+                        <li><span class="colon">:</span></li>
+                        <li><span id="sec">00</span>SECONDS</li>
+                    </ul>
+                </div>
+                <div class="shopbtn">
+                    <button class="shop_btn">SHOP NOW</button>
+                </div>
+            </div>
+        </div>
+        <!-- BANNER ENDS -->
+
+
+
+
+
+        <!-- START OF FURNITURE PRODUCT SECTION -->
+
+
+        <!-- Start Product Section -->
+        <div class="product-section">
+            <div class="dbit">
+                <div class="aiml">
+
+                    <!-- Start Column 1 -->
+                    <div class="col-md-12 col-lg-3 mb-5 mb-lg-0 col-12">
+                        <h2 class="mb-4 section-title">Crafted with excellent material.</h2>
+                        <p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
+                            vulputate velit imperdiet dolor tempor tristique. </p>
+                        <p class="bb"><a href="shop.html" class="btn">Explore</a></p>
+                    </div>
+                    <!-- End Column 1 -->
+
+                    <%result.forEach(function(item) {%>
+                        <% if(item.collection=='best_deals_2' ){%>
+                            <!-- Start Column 2 -->
+                            <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0 col-12">
+                                <a class="product-item" href="/add_to_cart">
+                                    <img src="images/<%=item.image%>" class="img-fluid product-thumbnail">
+                                    <h3 class="product-title">Nordic Chair</h3>
+                                    <%if(item.sale_price){%>
+                                        <strong class="product-price">&#8377<span>
+                                                <%=item.sale_price%>
+                                            </span></strong><br>
+                                        <strong class="product-price">&#8377<span
+                                                style="text-decoration: line-through;text-decoration-color: red;">
+                                                <%=item.price%>
+                                            </span></strong>
+                                        <%}else{%>
+                                            <strong class="product-price">&#8377<span>
+                                                    <%=item.sale_price%>
+                                                </span></strong>
+                                            <%}%>
+                                                <span class="icon-cross">
+                                                    <img src="images/site_requirred/Furniture/cross.svg"
+                                                        class="img-fluid">
+                                                </span>
+                                </a>
+                            </div>
+                            <%}})%>
+                </div>
+            </div>
+        </div>
+        <!-- End OF FURNITURE Product Section -->
+
+
+
+
+
+
+
+
+
+
+
+        <!-- BEST TRNDING START -->
+
+        <div class="gallery_section layout_padding">
+            <div class="container_">
+                <h1 class="gallery_taital">Best Trending</h1><br>
+            </div>
+            <div class="row_top">
+                <%result.forEach(function(item) {%>
+                    <% if(item.collection=='home_best_trending' ){%>
+                        <div class="col-sm-3">
+                            <div class="image_1"><img src="images/<%=item.image%>"></div>
+                            <% if(item.sale_price){ %>
+                                <div class="price_text">&#8377<span
+                                        style="color: #f9ca16;text-decoration:line-through;;text-decoration-color: aliceblue;"></span>
+                                    <%=item.sale_price%></span>
+                                </div>
+                                <div class="price_text"><span style="color: #f91616;text-decoration:line-through;">
+                                        &#8377 <%=item.price%>
+                                    </span>
+                                </div>
+
+                                <%} else{%>
+
+                                    <div class="price_text">$<span style="color: #f9ca16;"></span>
+                                        <%=item.price%></span>
+                                    </div>
+                                    <%}%>
+                                        <h1 class="shoes_text">
+                                            <%=item.name%>
+                                        </h1>
+                                        <form action="/add_to_cart" method="post">
+                                            <div class="boy_bt_1">
+                                                <input type="hidden" name="item_id" value="<%=item.product_id%>">
+                                                <input class="boy_bt_1" type="submit" value="Buy Now">
+                                            </div>
+                                        </form>
+                        </div>
+
+                        <%}})%>
+            </div>
+        </div>
+
+        <!-- BEST TRENDING SECTION ENDS -->
+
+
+        <!--Benifits-->
+        <div class="benefits">
+            <div class="benefit">
+                <div class="container">
+                    <div class="row benefit_row">
+                        <div class="col-lg-3 benefit_col">
+                            <div class="benefit_item d-flex flex-row align-items-center">
+                                <div class="benefit_icon"><i class="fa fa-truck" aria-hidden="true"></i></div>
+                                <div class="benefit_content">
+                                    <h6>FREE SHIPPING</h6>
+                                    <p>Suffered Alteration in Some Form</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 benefit_col">
+                            <div class="benefit_item d-flex flex-row align-items-center">
+                                <div class="benefit_icon"><i class="fa fa-inr" aria-hidden="true"></i></div>
+                                <div class="benefit_content">
+                                    <h6>CASH ON DELIVERY</h6>
+                                    <p>The Internet Tend To Repeat</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 benefit_col">
+                            <div class="benefit_item d-flex flex-row align-items-center">
+                                <div class="benefit_icon"><i class="fa fa-undo" aria-hidden="true"></i></div>
+                                <div class="benefit_content">
+                                    <h6>45 DAYS RETURN</h6>
+                                    <p>Making it Look Like Readable</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 benefit_col">
+                            <div class="benefit_item d-flex flex-row align-items-center">
+                                <div class="benefit_icon"><i class="fa fa-clock" aria-hidden="true"></i></div>
+                                <div class="benefit_content">
+                                    <h6>OPENING ALL WEEK</h6>
+                                    <p>8AM - 09PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- end benefits -->
+
+
+        <!-- subscribe section -->
+        <section class="subscribe_section">
+            <div class="container-fuild">
+                <div class="box">
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3">
+                            <div class="subscribe_form ">
+                                <div class="heading_container heading_center">
+                                    <h3>Subscribe To Get Discount Offers</h3>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                                <form action="">
+                                    <input type="email" placeholder="Enter your email">
+                                    <button>
+                                        subscribe
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end subscribe section -->
+
+
+
+
+
+        <!--review start -->
+
+        <section class="client_section layout_padding">
+            <div class="containersss">
+                <div class="heading_container heading_center">
+                    <h2>Customer's Review</h2>
+                </div>
+            </div>
+            <div class="review-container">
+                <!-- First review item -->
+                <div class="review-item">
+                    <img class="rounded-image" src="images/client.jpg" alt="John Doe">
+                    <h5 class="customer-name">John Doe</h5>
+                    <p class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac tempor
+                        libero. Nunc auctor auctor nisi, at vestibulum nulla mattis a.</p>
+                </div>
+                <!-- Second review item -->
+                <div class="review-item">
+                    <img class="rounded-image" src="images/client.jpg" alt="Jane Smith">
+                    <h5 class="customer-name">Jane Smith</h5>
+                    <p class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac tempor
+                        libero. Nunc auctor auctor nisi, at vestibulum nulla mattis a.</p>
+                </div>
+                <!-- Third review item -->
+                <div class="review-item">
+                    <img class="rounded-image" src="images/client.jpg" alt="Alex Johnson">
+                    <h5 class="customer-name">Alex Johnson</h5>
+                    <p class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac tempor
+                        libero. Nunc auctor auctor nisi, at vestibulum nulla mattis a.</p>
+                </div>
+            </div>
+
+        </section>
+
+
+
+
+
+
+
+
+        <!-- End client section -->
+
+
+
+
+
+
+
+
+
+        <footer>
+            <div class="container_footer">
+                <div class="row_footer">
+                    <div class="col-md-4">
+                        <div class="full">
+                            <div class="logo_footer">
+                                <a href="#"><img width="210" src="images/logo.png" alt="#" /></a>
+                            </div>
+                            <div class="information_f">
+                                <p><strong>ADDRESS:</strong> 28 White tower, Street Name New York City, USA</p>
+                                <p><strong>TELEPHONE:</strong> +91 987 654 3210</p>
+                                <p><strong>EMAIL:</strong> yourmain@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="widget_menu">
+                        <h3>Menu</h3>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Testimonial</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+
+                    </div>
+                    <div class="widget_menu">
+                        <h3>Account</h3>
+                        <ul>
+                            <li><a href="#">Account</a></li>
+                            <li><a href="#">Checkout</a></li>
+                            <li><a href="#">Login</a></li>
+                            <li><a href="#">Register</a></li>
+                            <li><a href="#">Shopping</a></li>
+                            <li><a href="#">Widget</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="widget_menu">
+                        <h3>Newsletter</h3>
+                        <div class="information_f">
+                            <p>Subscribe by our newsletter and get update protidin.</p>
+                        </div>
+                        <div class="form_sub">
+                            <form>
+                                <fieldset>
+                                    <div class="field">
+                                        <input type="email" placeholder="Enter Your Mail" name="email" />
+                                        <input type="submit" value="Subscribe" />
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+
+
+
+
+
+        <div class="cpy_">
+            <p class="mx-auto">© 2024 All Rights Reserved By <a href="https://dbit.co.in/">S & S Templates</a><br>
+
+                Distributed By <a href="https://ksp.karnataka.gov.in/pslocator/en" target="_blank">Shopper's Stop</a>
+
+            </p>
+        </div>
+
+
+
+
+
+        <script>
+            var day = document.getElementById('days')
+            var h = document.getElementById('hours')
+            var m = document.getElementById('minutes')
+            var s = document.getElementById('sec')
+
+            //calculate time in milliseconds
+            var sec = 1000
+            var min = sec * 60
+            var hrs = min * 60
+            var days = hrs * 24
+
+
+            const down_time = new Date('03-14-2024').getTime()
+            const interval = setInterval(() => {
+                function countdownTimer() {
+
+
+                    var curr_time = new Date().getTime()
+
+                    var difference = down_time - curr_time
+
+                    day.innerText = formatter(Math.floor(difference / days))
+                    h.innerText = formatter(Math.floor((difference % days) / hrs))
+                    m.innerText = formatter(Math.floor((difference % hrs) / min))
+                    s.innerText = formatter(Math.floor((difference % min) / sec))
+                }
+                function formatter(num) {
+                    if (num < 10) {
+                        return '0' + num
+                    }
+                    return num
+
+                }
+                if (difference0 = 0) {
+                    clearInterval(interval)
+                }
+                countdownTimer()
+            }, Infinity);
+
+        </script>
+</body>
+
+</html>

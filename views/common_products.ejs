@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="STYLES/product.css">
+</head>
+
+<body>
+    <%- include('basic_template_user.ejs') -%>
+        <header>
+            <div class="header-content">
+                <h1>
+                    <%=result[0].category%>
+                </h1>
+            </div>
+        </header>
+        <div class="container_fashion">
+            <div class="fashion">
+                <div class="container">
+                    <!-- Product 1 -->
+                    <%result.forEach(function(item){%>
+
+                        <div class="product">
+                            <form action="/single_product" method="post">
+                                <!-- <a href="/single_product"> -->
+                                <input type="hidden" name="item_id" value="<%=item.product_id%>">
+                                <input type="image" src="images/<%=item.image%>">
+                                <!-- <img src="images/<%=item.image%>" alt="Product 1">
+                        </a> -->
+                            </form>
+                            <h3>
+
+                                <%=item.name%>
+                            </h3>
+                            <%if(item.sale_price){%>
+                                <strong class="product-price">&#8377<span
+                                        style="text-decoration: line-through;text-decoration-color: red;">
+                                        <%=item.price%>
+                                    </span></strong><br>
+                                <strong class="product-price">&#8377<span>
+                                        <%=item.sale_price%>
+                                    </span></strong>
+                                <%}else{%>
+                                    <strong class="product-price">&#8377<span>
+                                            <%=item.price%>
+                                        </span></strong>
+                                    <%}%>
+                                        <div class="rating">
+                                            <%for(var i=item.rating;i>0;i--){%>
+                                                <span style="color: rgb(247, 247, 5);"> &#9733;</span>
+                                                <%}for(var i=(5-(item.rating));i>0;i--){%> <!-- Five star rating -->
+                                                    <span style="color: rgb(158, 154, 154);"> &#9733;</span>
+                                                    <%}%> <!-- Five star rating -->
+
+                                        </div> <button class="add-to-cart-btn">Add to Cart</button>
+                                        <div class="like-icon" onclick="likeProduct(event)">
+                                            <i class="far fa-heart"></i> <!-- Empty heart icon -->
+                                        </div>
+                        </div>
+                        <%})%>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Your JavaScript code goes here
+            // For example:
+            function likeProduct(event) {
+                event.stopPropagation();
+                var heartIcon = event.target;
+                heartIcon.classList.toggle('far');
+                heartIcon.classList.toggle('fas');
+                heartIcon.classList.toggle('liked');
+                // Add your code to store liked product data here
+            }
+
+
+
+
+
+            function addToCart(button) {
+                var product = button.closest('.product');
+                var link = document.createElement('a');
+                link.href = '#'; // Add your link URL here
+                link.textContent = 'View Cart'; // Text to display for the link
+                product.appendChild(link);
+            }
+
+
+
+
+        </script>
+
+
+
+
+</body>
+
+</html>

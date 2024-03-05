@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/STYLES/upload.css">
+</head>
+<body>
+    <%- include('basic_template_user.ejs') -%>
+    <div class="container">
+        <form id="loginForm" action="/upload_products" method="post">
+            <div class="logo-container">
+                <img src="/images/site_requirred/logo.png" alt="Shopper's Stop Logo" class="logos">
+            </div>
+            <h2>Enter the Product Details</h2>
+            <hr>
+            <div class="input-group">
+                <label for="name">Product-name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="input-group">
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description" required>
+            </div>
+            <div class="input-group">
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price"  required>
+            </div>
+            <div class="input-group">
+                <label for="sale-price">Discount-Price:</label>
+                <input type="number" id="Discount-Price" name="sale_price" >
+            </div>
+            <div class="input-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity"  required>
+            </div>
+            <div class="input-group">
+                <label for="image">Image-name:</label>
+                <input type="text" id="image" name="image"  required>
+            </div>
+            <div class="input-group">
+                <label for="rate">Rating:</label>
+                <input type="number" id="rate" name="rate" required>
+            </div>
+            <div class="input-group">
+                <label for="category">Category:</label>
+                <select name="category" id="category" required>
+                    <option value="Kids">Kids dress</option>
+                    <option value="Women">Women's Dress</option>
+                    <option value="Men">Men's Dress</option>
+                    <option value="Shoes">Shoes</option>
+                    <option value="Appliances">Appliances</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Furniture">Furniture</option>
+                    <option value="Beauty">Beauty</option>
+                    <option value="Grocery">Grocery</option>
+                    <option value="Mobile">Mobile</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="sub_category">Sub Category:</label>
+                <select name="sub_category" id="sub_category">
+                    <option value="">None</option>
+                    <option value="fruits">Fruits & Vegetables</option>
+                    <option value="dairy">Dairy Products</option>
+                    <option value="grains">Grains</option>
+                    <option value="beverages">Beverages</option>
+                    <option value="camera">Camera</option>
+                    <option value="headphones">Headphones</option>
+                    <option value="laptops">Laptops</option>
+                    <option value="printer">Printer</option>
+                    <option value="speaker">Speaker</option>
+                    <option value="ac">Air Conditioner</option>
+                    <option value="fridge">Fridge</option>
+                    <option value="tv">Television</option>
+                    <option value="wm">Washing Machine</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="collection">Collection if want to be displayed in home page:</label>
+                <select name="collection" id="collection">
+                    <option value="">None</option>
+                    <option value="home_best_trending">Best Trending</option>
+                    <option value="best_deals">Best Deals</option>
+                    <option value="best_deals_2">Best Deals Bottom</option>
+                </select>
+            </div>
+            <input id="login_button" type="submit" placeholder="Login">
+            <p class="message">Not registered? <a href="/register">Create an account</a></p>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopper's Stop - Login</title>
+    <link rel="stylesheet" href="/STYLES/login.css">
+</head>
+<body>
+    <%- include('basic_template.ejs') %>
+    <%if(login_err){%>
+        <div style="height: 3rem;background-color: rgba(182, 107, 107, 0.643);text-align: center;"><span style="color: red; font-size: 2rem;"><%=login_err%></span></div>
+    <%}%>
+        
+    <div class="container">
+        <form id="loginForm" action="/login_check" method="post">
+            <div class="logo-container">
+                <img src="/images/site_requirred/logo.png" alt="Shopper's Stop Logo" class="logos">
+            </div>
+            <h2>Login to Shopper's Stop</h2>
+            <hr>
+            <div class="input-group">
+                <label for="email">E-Mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password"  required>
+            </div>
+            <input id="login_button" type="submit" value="Login">
+            <p class="message">Not registered? <a href="/register">Create an account</a></p>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Product Page Design</title>
+    <link rel="stylesheet" href="STYLES/one_product.css">
+</head>
+<body>
+    <%- include('../basic_template_one.ejs') -%>
+    <section class="main-wrap">
+        <div class="product">
+            <div class="image-gallery">
+                <img src="images/<%=result.image%>" id="productImg" alt="">
+            </div>
+            <div class="product-details">
+                <div class="details">
+                    <h2><%=result.name%></h2>
+                    <h3>₹<span><%=result.sale_price%></span></h3>
+                    <h4><%= Math.floor(100-((result.sale_price/result.price)*100))%><span>% off</span></h4>
+                    <p><%=result.description%></p>
+                </div>
+                <div class="sizes">
+                    <form class="form">
+                        <div class="select-size">
+                            <h3>Size:</h3>
+                            <label for="sm">
+                                <input type="radio" name="size" id="sm">
+                                <span>S</span>
+                            </label>
+                            <label for="m">
+                                <input type="radio" name="size" id="m">
+                                <span>M</span>
+                            </label>
+                            <label for="lg">
+                                <input type="radio" name="size" id="lg">
+                                <span>L</span>
+                            </label>
+                            <label for="xl">
+                                <input type="radio" name="size" id="xl">
+                                <span>XL</span>
+                            </label>
+                            <label for="xxl">
+                                <input type="radio" name="size" id="xxl">
+                                <span>XXL</span>
+                            </label>
+                        </div>   
+                    </form>
+                </div>
+                <div class="colors">
+                    <form class="form">
+                        <div class="select-color">
+                            <h3>Color:</h3>
+                            <label for="red">
+                                <input type="radio" name="color" id="red">
+                                <span class="color-1"></span>
+                            </label>
+                            <label for="green">
+                                <input type="radio" name="color" id="green">
+                                <span class="color-2"></span>
+                            </label>
+                            <label for="blue">
+                                <input type="radio" name="color" id="blue">
+                                <span class="color-3"></span>
+                            </label>
+                            <label for="yellow">
+                                <input type="radio" name="color" id="yellow">
+                                <span class="color-4"></span>
+                            </label>
+                        </div>   
+                    </form>
+                </div>
+                <div class="quantity">
+                    <div class="select-quantity">
+                        <h3>Quantity:</h3>
+                        <input type="number" name="quantity" value="1">
+                    </div>
+                </div>
+                <div class="sub-btn">
+                    <button class="submit">Buy Now</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="container_footer">
+            <div class="row_footer">
+                <div class="col-md-4">
+                    <div class="full">
+                        <div class="logo_footer">
+                            <a href="#"><img width="210" src="images/logo.png" alt="#" /></a>
+                        </div>
+                        <div class="information_f">
+                            <p><strong>ADDRESS:</strong> 28 White tower, Street Name New York City, USA</p>
+                            <p><strong>TELEPHONE:</strong> +91 987 654 3210</p>
+                            <p><strong>EMAIL:</strong> yourmain@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="widget_menu">
+                    <h3>Menu</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Testimonial</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+
+                </div>
+                <div class="widget_menu">
+                    <h3>Account</h3>
+                    <ul>
+                        <li><a href="#">Account</a></li>
+                        <li><a href="#">Checkout</a></li>
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#">Register</a></li>
+                        <li><a href="#">Shopping</a></li>
+                        <li><a href="#">Widget</a></li>
+                    </ul>
+                </div>
+
+                <div class="widget_menu">
+                    <h3>Newsletter</h3>
+                    <div class="information_f">
+                        <p>Subscribe by our newsletter and get update protidin.</p>
+                    </div>
+                    <div class="form_sub">
+                        <form>
+                            <fieldset>
+                                <div class="field">
+                                    <input type="email" placeholder="Enter Your Mail" name="email" />
+                                    <input type="submit" value="Subscribe" />
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="cpy_">
+        <p class="mx-auto">© 2024 All Rights Reserved By <a href="https://dbit.co.in/">S & S Templates</a><br>
+
+            Distributed By <a href="https://ksp.karnataka.gov.in/pslocator/en" target="_blank">Shopper's Stop</a>
+
+        </p>
+    </div>
+</body>
+</html>

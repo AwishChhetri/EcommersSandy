@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopper's Stop - Register</title>
+    <link rel="stylesheet" href="/STYLES/register.css">
+</head>
+
+<body>
+    <%- include('basic_template.ejs') %>
+        <% if(alert_m){%>
+        <div
+            style="color: red;text-align: center;background-color: rgba(233, 122, 122, 0.466);height: 3.5rem;font-size: 2rem;">
+            <%=alert_m%>
+        </div>
+        <% }%>
+        <div class="container">
+            <form id="registerform" action="/signup_submit" method="post">
+                <div class="logo-container">
+                    <img src="/images/site_requirred/logo.png" alt="Shopper's Stop Logo" class="logo">
+                </div>
+                <h2>Register for Shopper's Stop</h2>
+                <hr>
+                <div class="input-group">
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <% if(alert_m) {%>
+                        <input style="border-color: red;" type="password" id="password" name="password" required>
+                        <%}else{%>
+                            <input type="password" id="password" name="password" required>
+                            <%}%>
+                </div>
+                <div class="input-group">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <% if(alert_m) {%>
+                        <input style="border-color: red;" type="password" id="confirmPassword" name="confirmPassword" required>
+                        <%}else{%>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required>
+                            <%}%>
+                </div>
+                <div class="input-group">
+                    <label for="phoneNumber">Phone Number:</label>
+                    <input type="text" id="phoneNumber" name="phoneNumber" required>
+                </div>
+                <input type="submit" id="register_button" placeholder="Register">
+                <p class="message">Already registered? <a href="/login">Login here</a></p>
+            </form>
+        </div>
+
+        <script>
+            document.getElementById("registerForm").addEventListener("submit", function (event) {
+                event.preventDefault();
+                // Here you can write JavaScript to handle form submission,
+                // such as sending data to a server for registration.
+            });
+        </script>
+</body>
+
+</html>
